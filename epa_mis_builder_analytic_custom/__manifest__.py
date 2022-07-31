@@ -11,6 +11,6 @@
     "website": "https://github.com/Escodoo/epa-addons",
     "depends": ["mis_builder_analytic"],
     "data": [
-        "data/ir_config_parameter.xml",
+        "views/res_company.xml",
     ],
 }
