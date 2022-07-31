@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<odoo noupdate="1">
-    <record id="mis_builder_analytic_default_account" model="ir.config_parameter">
-        <field name="key">mis_builder_analytic_default_account_id</field>
-        <field name="value">349</field>
-    </record>
-</odoo>
