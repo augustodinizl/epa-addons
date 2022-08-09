@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_purchaseorder_document"
+        name="report_purchaseorder_document in (epa_purchase_custom)"
+        inherit_id="purchase.report_purchaseorder_document"
+    >
+        <div id="informations" position="replace">
+            <div id="informations" class="row mt32 mb32">
+                <div t-if="o.partner_ref" class="col-3 bm-2">
+                    <strong>Your Order Reference:</strong>
+                    <p t-field="o.partner_ref" class="m-0" />
+                </div>
+                <div t-if="o.date_order" class="col-3 bm-2">
+                    <strong>Order Date:</strong>
+                    <p t-field="o.date_order" class="m-0" />
+                </div>
+            </div>
+        </div>
+        <xpath expr="//div[contains(@t-field, 'o.partner_id')]" position="before">
+            <strong>Vendor:</strong>
+        </xpath>
+
+    </template>
+</odoo>
