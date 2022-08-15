@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="account_invoice_form_view">
+        <field name="name">account.invoice.form (in epa_account_custom)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//button[@id='account_invoice_payment_btn']"
+                position="attributes"
+            >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_invoice_supplier_form_view">
+        <field name="name">account.invoice.form (in epa_account_custom)</field>
+        <field name="model">account.invoice</field>
+        <field
+            name="inherit_id"
+            ref="payment.account_invoice_view_form_inherit_payment"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//button[@id='account_invoice_payment_btn']"
+                position="attributes"
+            >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+<!--    <record model="ir.ui.view" id="account_invoice_search_view">-->
+<!--        <field name="name">account.invoice.search (in epa_account_custom)</field>-->
+<!--        <field name="model">account.invoice</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.search_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.ui.view" id="account_invoice_tree_view">-->
+<!--        <field name="name">account.invoice.tree (in epa_account_custom)</field>-->
+<!--        <field name="model">account.invoice</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.tree_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>
