@@ -15,6 +15,11 @@
                     <strong>Order Date:</strong>
                     <p t-field="o.date_order" class="m-0" />
                 </div>
+                <div class="col-6 bm-2">
+                    <strong>Purchaser:</strong>
+                    <p t-field="o.user_id.name" class="m-0" />
+                    <p t-field="o.user_id.email" class="m-0" />
+                </div>
             </div>
         </div>
         <xpath expr="//div[contains(@t-field, 'o.partner_id')]" position="before">
