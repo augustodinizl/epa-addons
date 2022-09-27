@@ -12,5 +12,6 @@
     "depends": ["purchase"],
     "data": [
         "views/report_purchaseorder_document.xml",
+        "views/res_config_settings.xml",
     ],
 }
