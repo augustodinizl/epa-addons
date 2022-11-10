@@ -17,6 +17,7 @@ class AccountInvoice(models.Model):
         for invoice in to_open_invoices:
             if (
                 invoice.company_id.block_invoice_validation_exceeding_purchase
+                and invoice.partner_id.partner_block_invoice_validation_exceeding_purchase
                 and invoice.type == "in_invoice"
             ):
                 purchase_orders = invoice.env["purchase.order"].search(
