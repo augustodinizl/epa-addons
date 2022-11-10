@@ -15,23 +15,24 @@ class AccountInvoice(models.Model):
         to_open_invoices = self.filtered(lambda inv: inv.state != "open")
 
         for invoice in to_open_invoices:
-            if invoice.company_id.block_invoice_validation_exceeding_purchase:
-                purchase_order = invoice.env["purchase.order"].search(
-                    [("invoice_ids", "in", self.id)], limit=1
+            if (
+                invoice.company_id.block_invoice_validation_exceeding_purchase
+                and invoice.type == "in_invoice"
+            ):
+                purchase_orders = invoice.env["purchase.order"].search(
+                    [("invoice_ids", "in", self.id)]
                 )
 
                 invoices = (
-                    purchase_order.invoice_ids.filtered(
+                    purchase_orders.invoice_ids.filtered(
                         lambda x: x.state in ["open", "in_payment", "paid"]
+                        and x.type == "in_invoice"
                     )
                     + invoice
                 )
 
-                if (
-                    invoice.type in ["in_invoice"]
-                    and purchase_order
-                    and sum(invoices.mapped("amount_total"))
-                    > purchase_order.amount_total
+                if purchase_orders and sum(invoices.mapped("amount_total")) > sum(
+                    purchase_orders.mapped("amount_total")
                 ):
                     raise UserError(
                         _(
