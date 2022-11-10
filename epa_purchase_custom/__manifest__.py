@@ -11,6 +11,7 @@
     "website": "https://github.com/Escodoo/epa-addons",
     "depends": ["purchase"],
     "data": [
+        "views/res_partner.xml",
         "views/report_purchaseorder_document.xml",
         "views/res_config_settings.xml",
     ],
