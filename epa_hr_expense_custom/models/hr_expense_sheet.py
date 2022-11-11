@@ -8,4 +8,5 @@ class HrExpenseSheet(models.Model):
 
     _inherit = "hr.expense.sheet"
 
-    accounting_date = fields.Date("Date", default=fields.Date.context_today)
+    accounting_date = fields.Date("Accounting Date", default=fields.Date.context_today)
+    maturity_date = fields.Date("Maturity Date", default=fields.Date.context_today)

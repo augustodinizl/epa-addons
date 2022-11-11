@@ -3,14 +3,21 @@
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-<!--    <record model="ir.ui.view" id="hr_expense_sheet_form_view">-->
-<!--        <field name="name">hr.expense.sheet.form (in epa_hr_expense_custom)</field>-->
-<!--        <field name="model">hr.expense.sheet</field>-->
-<!--        <field name="inherit_id" ref="TODO othermodule.form_view" />-->
-<!--        <field name="arch" type="xml">-->
-<!--            &lt;!&ndash; TODO &ndash;&gt;-->
-<!--        </field>-->
-<!--    </record>-->
+    <record model="ir.ui.view" id="hr_expense_sheet_form_view">
+        <field name="name">hr.expense.sheet.form (in epa_hr_expense_custom)</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form" />
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="accounting_date" position="move" />
+                <field
+                    name="maturity_date"
+                    groups="account.group_account_user"
+                    attrs="{'invisible': [('state', 'not in', ['approve', 'post', 'done'])]}"
+                />
+            </field>
+        </field>
+    </record>
 
 <!--    <record model="ir.ui.view" id="hr_expense_sheet_search_view">-->
 <!--        <field name="name">hr.expense.sheet.search (in epa_hr_expense_custom)</field>-->
