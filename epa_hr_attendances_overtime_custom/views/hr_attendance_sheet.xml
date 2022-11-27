@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+<!--    <record model="ir.ui.view" id="hr_attendance_sheet_form_view">-->
+<!--        <field name="name">hr.attendance.sheet.form (in epa_hr_attendance_overtime_custom)</field>-->
+<!--        <field name="model">hr.attendance.sheet</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.ui.view" id="hr_attendance_sheet_search_view">-->
+<!--        <field name="name">hr.attendance.sheet.search (in epa_hr_attendance_overtime_custom)</field>-->
+<!--        <field name="model">hr.attendance.sheet</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.search_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.ui.view" id="hr_attendance_sheet_tree_view">-->
+<!--        <field name="name">hr.attendance.sheet.tree (in epa_hr_attendance_overtime_custom)</field>-->
+<!--        <field name="model">hr.attendance.sheet</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.tree_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>
