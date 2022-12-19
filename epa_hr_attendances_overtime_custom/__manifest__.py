@@ -9,7 +9,11 @@
     "license": "AGPL-3",
     "author": "Escodoo",
     "website": "https://github.com/Escodoo/epa-addons",
-    "depends": ["hr_attendances_overtime"],
+    "depends": [
+        "hr_attendances_overtime",
+        "hr_attendance_modification_tracking",
+        "hr_attendance_reason",
+    ],
     "data": [
         "views/hr_attendance_sheet.xml",
         "views/hr_attendance_sheet_report.xml",

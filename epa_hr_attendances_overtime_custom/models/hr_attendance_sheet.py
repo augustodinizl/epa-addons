@@ -14,6 +14,20 @@ class HrAttendanceSheet(models.Model):
 
     total_attendance = fields.Float("Total Attendance")
     total_planned_attendance = fields.Float("Total Planned Attendance")
+    attendance_ids = fields.One2many(
+        "hr.attendance", string="HR Attendance", compute="_compute_attendances"
+    )
+
+    def _compute_attendances(self):
+        for line in self:
+            line.attendance_ids = self.env["hr.attendance"].search(
+                [
+                    ("employee_id", "=", self.employee_id.id),
+                    ("check_in", ">=", self.request_date_from),
+                    ("check_in", "<=", self.request_date_to),
+                ],
+                order="check_in",
+            )
 
     # EPA Refactor
     @api.multi

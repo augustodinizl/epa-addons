@@ -160,6 +160,46 @@
                     </t>
                 </tbody>
             </table>
+
+            <p style="page-break-after: always;" />
+
+            <h3>
+                <span>Attendance Detail</span>
+            </h3>
+
+            <table class="table table-sm o_main_table" style="font-size: 10px">
+                <thead>
+                    <tr>
+                        <t t-set="colspan" t-value="5" />
+                        <th name="th_check_in">Check In</th>
+                        <th name="th_check_out">Check Out</th>
+                        <th name="th_time_changed_manually">Time changed</th>
+                        <th name="th_attendance_reason_ids">Attendance Reason</th>
+                        <th name="th_worked_hours" class="text-right">Worked Hours</th>
+                    </tr>
+                </thead>
+                <tbody class="sale_tbody">
+                    <t t-foreach="doc.attendance_ids" t-as="line">
+                        <tr class="bg-200 font-weight-bold">
+                            <td name="td_check_in">
+                                <span t-field="line.check_in" />
+                            </td>
+                            <td name="td_check_out">
+                                <span t-field="line.check_out" />
+                            </td>
+                            <td name="td_time_changed_manually">
+                                <span t-field="line.time_changed_manually" />
+                            </td>
+                            <td name="td_attendance_reason_ids">
+                                <span t-field="line.attendance_reason_ids" />
+                            </td>
+                            <td name="td_worked_hours" class="text-right">
+                                <span t-field="line.worked_hours" />
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
         </div>
     </t>
 </template>
@@ -169,7 +209,7 @@
         <t t-set="data_report_margin_top" t-value="12" />
         <t t-set="data_report_header_spacing" t-value="9" />
         <t t-set="data_report_landscape" t-value="True" />
-<!--        <t t-set="full_width" t-value="True"/>-->
+        <t t-set="full_width" t-value="True" />
         <t t-foreach="docs" t-as="doc">
             <t t-call="epa_hr_attendances_overtime_custom.report_hr_attendance_sheet" />
         </t>
