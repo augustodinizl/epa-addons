@@ -3,14 +3,34 @@
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-<!--    <record model="ir.ui.view" id="hr_attendance_sheet_form_view">-->
-<!--        <field name="name">hr.attendance.sheet.form (in epa_hr_attendance_overtime_custom)</field>-->
-<!--        <field name="model">hr.attendance.sheet</field>-->
-<!--        <field name="inherit_id" ref="TODO othermodule.form_view"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            &lt;!&ndash; TODO &ndash;&gt;-->
-<!--        </field>-->
-<!--    </record>-->
+    <record model="ir.ui.view" id="hr_attendance_sheet_form_view">
+        <field
+            name="name"
+        >hr.attendance.sheet.form (in epa_hr_attendance_overtime_custom)</field>
+        <field name="model">hr.attendance.sheet</field>
+        <field
+            name="inherit_id"
+            ref="hr_attendances_overtime.attendance_sheet_form_view"
+        />
+        <field name="arch" type="xml">
+
+            <xpath expr="//page/group/group" position="before">
+                <group string="ATTENDANCE">
+                    <field
+                        name="total_planned_attendance"
+                        widget="float_time"
+                        readonly="1"
+                    />
+                    <field name="total_attendance" widget="float_time" readonly="1" />
+                </group>
+            </xpath>
+
+            <field name="total_attendance" position="before">
+                <field name="total_planned_attendance" widget="float_time" />
+            </field>
+
+        </field>
+    </record>
 
 <!--    <record model="ir.ui.view" id="hr_attendance_sheet_search_view">-->
 <!--        <field name="name">hr.attendance.sheet.search (in epa_hr_attendance_overtime_custom)</field>-->

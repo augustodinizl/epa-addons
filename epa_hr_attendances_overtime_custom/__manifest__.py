@@ -12,6 +12,8 @@
     "depends": ["hr_attendances_overtime"],
     "data": [
         "views/hr_attendance_sheet.xml",
+        "views/hr_attendance_sheet_report.xml",
+        "views/hr_attendance_sheet_template.xml",
     ],
     "demo": [],
 }

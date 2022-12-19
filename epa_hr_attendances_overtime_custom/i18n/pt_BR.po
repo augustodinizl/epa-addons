@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* epa_hr_attendances_overtime_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-19 21:55+0000\n"
+"PO-Revision-Date: 2022-12-19 18:57-0300\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<span>Attendance Sheet: </span>"
+msgstr "<span>Folha de Presença: </span>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<span>Period: </span>"
+msgstr "<span>Período: </span>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<strong>Total Absence</strong>"
+msgstr "<strong>Total de Absenteísmo</strong>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<strong>Total Attendance</strong>"
+msgstr "<strong>Total de Presença</strong>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<strong>Total Diff Time</strong>"
+msgstr "<strong>Total de Diferença de Tempo</strong>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<strong>Total Late in</strong>"
+msgstr "<strong>Total de Atraso na Entrada</strong>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<strong>Total Overtime</strong>"
+msgstr "<strong>Total Hora Extra</strong>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "<strong>Total Planned Attendance</strong>"
+msgstr "<strong>Total Planejado de Presença</strong>"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.hr_attendance_sheet_form_view
+msgid "ATTENDANCE"
+msgstr "PRESENÇA"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Actual Signin"
+msgstr "Entrada Atual"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Actual Signout"
+msgstr "Saída Atual"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model:ir.actions.report,name:epa_hr_attendances_overtime_custom.action_report_hr_attendance_sheet
+#: model:ir.model,name:epa_hr_attendances_overtime_custom.model_hr_attendance_sheet
+msgid "Attendance Sheet"
+msgstr "Folha de Presença"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model:ir.model,name:epa_hr_attendances_overtime_custom.model_hr_attendance_sheet_line
+msgid "Attendance Sheet Line"
+msgstr "Linha da Folha de Presença"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Date"
+msgstr "Data"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Day"
+msgstr "Dia"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Diff Time"
+msgstr "Diferença de Tempo"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Late in"
+msgstr "Atraso na Entrada"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Overtime"
+msgstr "Hora Extra"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Planned Signin"
+msgstr "Entrada Planejada"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Planned Signout"
+msgstr "Saída Planejada"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Status"
+msgstr "Situação"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model:ir.model.fields,field_description:epa_hr_attendances_overtime_custom.field_hr_attendance_sheet__total_attendance
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Total Attendance"
+msgstr "Presença Total"
+
+#. module: epa_hr_attendances_overtime_custom
+#: model:ir.model.fields,field_description:epa_hr_attendances_overtime_custom.field_hr_attendance_sheet__total_planned_attendance
+#: model:ir.model.fields,field_description:epa_hr_attendances_overtime_custom.field_hr_attendance_sheet_line__total_planned_attendance
+#: model_terms:ir.ui.view,arch_db:epa_hr_attendances_overtime_custom.report_hr_attendance_sheet
+msgid "Total Planned Attendance"
+msgstr "Total Planejado de Presença"
