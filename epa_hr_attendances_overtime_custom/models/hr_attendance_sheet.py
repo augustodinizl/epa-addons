@@ -22,9 +22,9 @@ class HrAttendanceSheet(models.Model):
         for line in self:
             line.attendance_ids = self.env["hr.attendance"].search(
                 [
-                    ("employee_id", "=", self.employee_id.id),
-                    ("check_in", ">=", self.request_date_from),
-                    ("check_in", "<=", self.request_date_to),
+                    ("employee_id", "=", line.employee_id.id),
+                    ("check_in", ">=", line.request_date_from),
+                    ("check_in", "<=", line.request_date_to),
                 ],
                 order="check_in",
             )
