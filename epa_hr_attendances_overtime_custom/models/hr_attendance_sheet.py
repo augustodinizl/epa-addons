@@ -5,13 +5,31 @@ from datetime import timedelta
 
 from pytz import timezone
 
-from odoo import api, models
+from odoo import api, fields, models
 
 
 class HrAttendanceSheet(models.Model):
 
     _inherit = "hr.attendance.sheet"
 
+    total_attendance = fields.Float("Total Attendance")
+    total_planned_attendance = fields.Float("Total Planned Attendance")
+    attendance_ids = fields.One2many(
+        "hr.attendance", string="HR Attendance", compute="_compute_attendances"
+    )
+
+    def _compute_attendances(self):
+        for line in self:
+            line.attendance_ids = self.env["hr.attendance"].search(
+                [
+                    ("employee_id", "=", line.employee_id.id),
+                    ("check_in", ">=", line.request_date_from),
+                    ("check_in", "<=", line.request_date_to),
+                ],
+                order="check_in",
+            )
+
+    # EPA Refactor
     @api.multi
     def get_attendance(self, data):
         """Get Attendance History Of Employee."""
@@ -117,6 +135,40 @@ class HrAttendanceSheet(models.Model):
                             if not line.date_to == date or line.date_from == date:
                                 vals = {}
 
+                if vals["status"] in ["weekday", "absence"]:
+                    vals.update({"total_planned_attendance": avg_hours})
+
                 if flage and vals:
                     self.env["hr.attendance.sheet.line"].create(vals)
         self.employee_id.attendance_sheet_id = self.id or False
+
+    @api.multi
+    def compute_attendance_data(self):
+        super().compute_attendance_data()
+        for rec in self:
+            total_attendance = 0
+            total_planned_attendance = 0
+            for line in rec.attendance_sheet_ids:
+                total_attendance = total_attendance + line.total_attendance
+                total_planned_attendance = (
+                    total_planned_attendance + line.total_planned_attendance
+                )
+            rec.total_attendance = total_attendance
+            rec.total_planned_attendance = total_planned_attendance
+
+    @api.multi
+    def print_document(self):
+        self.ensure_one()
+        [data] = self.read()
+        datas = {"ids": [], "model": "hr.attendance.sheet", "form": data}
+        return self.env.ref(
+            "epa_hr_attendances_overtime_custom.action_report_hr_attendance_sheet"
+        ).report_action(self, data=datas)
+
+
+class HrAttendanceSheetLine(models.Model):
+    """Attendance Sheet Line."""
+
+    _inherit = "hr.attendance.sheet.line"
+
+    total_planned_attendance = fields.Float(string="Total Planned Attendance")

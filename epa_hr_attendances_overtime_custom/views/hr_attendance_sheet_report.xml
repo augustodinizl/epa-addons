@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+            string="Attendance Sheet"
+            id="action_report_hr_attendance_sheet"
+            model="hr.attendance.sheet"
+            name="epa_hr_attendances_overtime_custom.main_report_hr_attendance_sheet"
+            file="epa_hr_attendances_overtime_custom.main_report_hr_attendance_sheet"
+            report_type="qweb-pdf"
+            print_report_name="(
+                'Attendance Sheet - %s - %s to %s' % (object.employee_id.name, object.request_date_from, object.request_date_to))"
+        />
+    </data>
+</odoo>
