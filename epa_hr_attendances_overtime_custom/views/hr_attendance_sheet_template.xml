@@ -197,7 +197,7 @@
                                 <span t-field="line.attendance_reason_ids" />
                             </td>
                             <td name="td_worked_hours" class="text-right">
-                                <span t-field="line.worked_hours" />
+                                <span t-field="line.worked_hours" t-options='{"widget": "float_time"} />
                             </td>
                         </tr>
                     </t>
