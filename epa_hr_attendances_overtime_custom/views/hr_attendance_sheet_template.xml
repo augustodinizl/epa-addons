@@ -10,12 +10,15 @@
                 <span>Attendance Sheet: </span>
                 <span t-field="o.employee_id.name" />
             </h2>
-            <h3>
+            <h6>
                 <span>Period: </span>
                 <span t-field="o.request_date_from" />
                 <span> - </span>
                 <span t-field="o.request_date_to" />
-            </h3>
+                <span> - </span>
+                <span>Empresa: </span>
+                <span t-field="o.employee_id.company_id" />
+            </h6>
             <div id="informations" class="row mt16 mb16">
                 <div class="col-2 bm-0" style="font-size: 12px">
                     <strong>Total Planned Attendance</strong>
