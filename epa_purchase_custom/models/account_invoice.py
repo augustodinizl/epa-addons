@@ -6,7 +6,6 @@ from odoo.exceptions import UserError
 
 
 class AccountInvoice(models.Model):
-
     _inherit = "account.invoice"
 
     @api.multi

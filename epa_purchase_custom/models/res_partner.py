@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class ResPartner(models.Model):
-
     _inherit = "res.partner"
 
     partner_block_invoice_validation_exceeding_purchase = fields.Boolean(

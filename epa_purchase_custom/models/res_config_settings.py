@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class ResConfigSettings(models.TransientModel):
-
     _inherit = "res.config.settings"
 
     block_invoice_validation_exceeding_purchase = fields.Boolean(
