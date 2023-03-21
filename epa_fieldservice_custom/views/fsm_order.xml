@@ -3,14 +3,19 @@
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-<!--    <record model="ir.ui.view" id="fsm_order_form_view">-->
-<!--        <field name="name">fsm.order.form (in epa_fieldservice_custom)</field>-->
-<!--        <field name="model">fsm.order</field>-->
-<!--        <field name="inherit_id" ref="TODO othermodule.form_view"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            &lt;!&ndash; TODO &ndash;&gt;-->
-<!--        </field>-->
-<!--    </record>-->
+    <record model="ir.ui.view" id="fsm_order_form_view">
+        <field name="name">fsm.order.form (in epa_fieldservice_custom)</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form" />
+        <field name="arch" type="xml">
+            <field name="scheduled_duration" position="before">
+                <field name="scheduled_days_duration" />
+            </field>
+            <field name="person_id" position="after">
+                <field name="team_coordinator_id" />
+            </field>
+        </field>
+    </record>
 
 
 
