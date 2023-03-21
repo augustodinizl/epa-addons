@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+<!--    <record model="ir.ui.view" id="fsm_order_form_view">-->
+<!--        <field name="name">fsm.order.form (in epa_fieldservice_custom)</field>-->
+<!--        <field name="model">fsm.order</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+</odoo>
