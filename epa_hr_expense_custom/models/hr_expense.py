@@ -6,7 +6,6 @@ from odoo import api, models
 
 
 class HrExpense(models.Model):
-
     _inherit = "hr.expense"
 
     @api.multi

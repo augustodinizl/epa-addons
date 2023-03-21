@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class HrExpenseSheet(models.Model):
-
     _inherit = "hr.expense.sheet"
 
     accounting_date = fields.Date("Accounting Date", default=fields.Date.context_today)
