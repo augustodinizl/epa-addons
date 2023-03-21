@@ -5,7 +5,6 @@ from odoo import api, models, tools
 
 
 class MisAccountAnalyticLine(models.Model):
-
     _inherit = "mis.account.analytic.line"
 
     @api.model_cr
