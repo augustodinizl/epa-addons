@@ -4,7 +4,7 @@ from odoo.tests import common
 
 class TestFsmOrder(common.TransactionCase):
     def setUp(self):
-        super(TestFsmOrder, self).setUp()
+        super().setUp()
         self.FsmOrder = self.env["fsm.order"]
 
         self.person1 = self.env.ref("fieldservice.person_1")

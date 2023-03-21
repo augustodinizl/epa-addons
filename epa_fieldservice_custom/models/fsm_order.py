@@ -6,7 +6,6 @@ from odoo.exceptions import UserError
 
 
 class FsmOrder(models.Model):
-
     _inherit = "fsm.order"
 
     scheduled_days_duration = fields.Float(
