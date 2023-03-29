@@ -10,7 +10,6 @@ from odoo import api, fields, models
 
 
 class HrAttendanceSheet(models.Model):
-
     _inherit = "hr.attendance.sheet"
 
     total_attendance = fields.Float("Total Attendance")
@@ -64,14 +63,14 @@ class HrAttendanceSheet(models.Model):
                     # if vals["asignin"] == 0.0 and vals["asignout"] == 0.0:
                     resource_id = self.employee_id.resource_id
                     leave = self.employee_id.resource_calendar_id.leave_ids.filtered(
-                        lambda l: (not l.resource_id or l.resource_id == resource_id)
+                        lambda x: (not x.resource_id or x.resource_id == resource_id)
                         and timezone("UTC")
-                        .localize(l.date_from)
+                        .localize(x.date_from)
                         .astimezone(timezone(resource_id.tz))
                         .date()
                         <= date
                         and timezone("UTC")
-                        .localize(l.date_to)
+                        .localize(x.date_to)
                         .astimezone(timezone(resource_id.tz))
                         .date()
                         >= date
@@ -123,7 +122,6 @@ class HrAttendanceSheet(models.Model):
                     continue
                 if vals["status"] == "absence":
                     for line in resource_calendar_id.attendance_ids:
-
                         if (
                             int(date.weekday()) == int(line.dayofweek)
                             and line.date_from

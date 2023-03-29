@@ -20,4 +20,5 @@
         "views/hr_attendance_sheet_template.xml",
     ],
     "demo": [],
+    "auto_install": True,
 }

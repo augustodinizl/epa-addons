@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class ResCompany(models.Model):
-
     _inherit = "res.company"
 
     block_invoice_validation_exceeding_purchase = fields.Boolean(
