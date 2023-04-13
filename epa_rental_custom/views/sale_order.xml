@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="sale_order_form_view">
+        <field name="name">sale.order.form (in epa_rental_custom)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <header position="inside">
+                <field name="is_rental_order" invisible="1" />
+            </header>
+            <field name="client_order_ref" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('is_rental_order', '!=', False)]}</attribute>
+            </field>
+            <field name="payment_term_id" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('is_rental_order', '!=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_management_sale_order_form_quote">
+        <field
+            name="name"
+        >sale.order.form (sale_management) (in epa_rental_custom)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_management.sale_order_form_quote" />
+        <field name="arch" type="xml">
+            <field name="sale_order_template_id" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('is_rental_order', '!=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_payment_sale_view_order_form">
+        <field
+            name="name"
+        >sale.order.form (account_payment_sale) (in epa_rental_custom)</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="account_payment_sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="payment_mode_id" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('is_rental_order', '!=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

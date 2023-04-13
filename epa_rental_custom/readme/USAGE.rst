@@ -1,0 +1,1 @@
+To use the "epa_rental_custom" module, all you need to do is install it on your Odoo instance. Once the module is installed, the customizations will automatically be added to the sales order form, making it easier to manage rental orders.
