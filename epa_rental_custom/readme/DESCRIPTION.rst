@@ -1,7 +1,11 @@
-The "epa_rental_custom" module was developed specifically for our client who specializes in equipment rental. It adds some enhancements to the sales order form, making the process of managing rental orders more straightforward and user-friendly.
+The `epa_rental_custom` module was developed to meet the needs of our client who works with equipment rental. It adds some customizations to the Odoo sales order form, making the management process of rental orders more efficient and user-friendly.
 
-With the changes made, it's now easier to differentiate rental orders from standard sales orders as they're displayed differently in the form. Additionally, fields that are not relevant to rental orders, such as "client_order_ref", "payment_term_id", "sale_order_template_id", and "payment_mode_id", are hidden, making the process of creating and viewing orders more streamlined and efficient.
+The changes made by the module include:
 
-These changes were made to help our client better manage their equipment rental orders, making the whole process more efficient and user-friendly. The "epa_rental_custom" module allows the client to easily differentiate rental orders from standard sales orders and only displays the fields that are relevant to the equipment rental process.
+- Hiding the "client_order_ref" and "payment_term_id" fields, which are not relevant for rental orders.
 
-With these enhancements, the client can manage their rental orders more easily, saving time and making the entire process more efficient. The "epa_rental_custom" module is a customized solution tailored to our client's specific needs, designed to enhance their Odoo experience and productivity.
+- Hiding the "sale_order_template_id" field, which is used to select a sales order template, but for rental orders, a specific sales order template is not needed.
+
+- Hiding the "payment_mode_id" field, which is used to select the payment mode of the order, but for rental orders, the payment mode is usually pre-defined and does not need to be configured.
+
+With these changes, the rental order form becomes simpler and more intuitive, showing only the relevant fields to the user. This helps to make the process of creating and viewing rental orders more efficient and focused on the specific needs of our client who works with equipment rental.
