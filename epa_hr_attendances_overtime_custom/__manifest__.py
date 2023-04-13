@@ -13,6 +13,7 @@
         "hr_attendances_overtime",
         "hr_attendance_modification_tracking",
         "hr_attendance_reason",
+        "hr_attendance_report_theoretical_time",
     ],
     "data": [
         "views/hr_attendance_sheet.xml",

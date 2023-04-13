@@ -45,6 +45,14 @@
                             />
                 </div>
                 <div class="col-2 bm-0" style="font-size: 12px">
+                    <strong>Total Overtime (Real)</strong>
+                    <p
+                                t-field="o.total_overtime_real"
+                                class="m-0"
+                                t-options='{"widget": "float_time"}'
+                            />
+                </div>
+                <div class="col-2 bm-0" style="font-size: 12px">
                     <strong>Total Absence</strong>
                     <p
                                 t-field="o.total_absence"

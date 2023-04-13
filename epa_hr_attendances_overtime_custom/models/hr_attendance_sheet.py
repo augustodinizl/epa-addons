@@ -17,6 +17,7 @@ class HrAttendanceSheet(models.Model):
     attendance_ids = fields.One2many(
         "hr.attendance", string="HR Attendance", compute="_compute_attendances"
     )
+    total_overtime_real = fields.Float("Total Overtime (Real)")
 
     def _compute_attendances(self):
         for line in self:
@@ -180,9 +181,16 @@ class HrAttendanceSheet(models.Model):
                 )
             rec.total_attendance = total_attendance
             rec.total_planned_attendance = total_planned_attendance
+
             total_absence = rec.total_planned_attendance - rec.total_attendance
-            if total_absence >= 0:
-                rec.total_absense = total_absence
+            rec.total_absence = (
+                total_absence if total_absence >= 0 else rec.total_absence
+            )
+
+            total_overtime = rec.total_attendance - rec.total_planned_attendance
+            rec.total_overtime_real = (
+                total_overtime if total_overtime >= 0 else rec.total_overtime_real
+            )
 
     @api.multi
     def print_document(self):
