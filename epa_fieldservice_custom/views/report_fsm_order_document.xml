@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_fsm_order_document_icti"
+        inherit_id="fieldservice.report_fsm_order_document"
+    >
+        <div class="page" position="replace">
+            <div class="oe_structure" />
+            <hr />
+            <h2>
+                FS Order #
+                <span t-field="doc.name" />
+                <t t-if="doc.template_id"> (<span t-field="doc.template_id.name" />)
+                </t>
+            </h2>
+            <div>
+                <strong>Type:</strong>
+                <span t-field="doc.type" />
+            </div>
+            <div t-if="doc.project_id">
+                <strong>Project:</strong>
+                <span t-field="doc.project_id" />
+            </div>
+            <div>
+                <hr />
+                <strong>Team Coordinator:</strong>
+                <span t-field="doc.team_coordinator_id" />
+            </div>
+            <div>
+                <strong>Assigned To:</strong>
+                <span t-field="doc.person_id" />
+            </div>
+            <div id="scheduled">
+                <hr />
+                <h3>Schedule Details</h3>
+                <br />
+                <div>
+                    <strong>Scheduled Date Start:</strong>
+                    <span
+                        t-field="doc.scheduled_date_start"
+                        t-options="{'widget': 'date', 'tz': doc.location_id.tz}"
+                    />
+                </div>
+                <br />
+                <div>
+                    <strong>Scheduled Days Duration:</strong>
+                    <span
+                        t-field="doc.scheduled_days_duration"
+                        t-options="{'widget': 'float_time'}"
+                    />
+                </div>
+                <br />
+                <div>
+                    <strong>Scheduled Date End:</strong>
+                    <span
+                        t-field="doc.scheduled_date_end"
+                        t-options="{'widget': 'date', 'tz': doc.location_id.tz}"
+                    />
+                </div>
+                <br />
+            </div>
+            <div t-if="doc.description" id="description">
+                <hr />
+                <h3>Description</h3>
+                <p t-field="doc.description" />
+            </div>
+            <div t-if="doc.todo" id="instruction">
+                <hr />
+                <h3>Instructions</h3>
+                <p t-raw="doc.todo" />
+            </div>
+        </div>
+    </template>
+</odoo>
