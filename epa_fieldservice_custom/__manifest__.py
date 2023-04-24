@@ -10,10 +10,11 @@
     "author": "Escodoo",
     "website": "https://github.com/Escodoo/epa-addons",
     "depends": [
-        "fieldservice",
+        "fieldservice_project",
     ],
     "data": [
         "views/fsm_order.xml",
+        "views/report_fsm_order_document.xml",
     ],
     "demo": [],
 }
