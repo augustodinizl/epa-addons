@@ -21,6 +21,12 @@
                     name="attrs"
                 >{'invisible': [('is_rental_order', '!=', False)]}</attribute>
             </field>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field
+                    name="responsible_technical"
+                    attrs="{'invisible': [('is_rental_order', '=', False)]}"
+                />
+            </xpath>
         </field>
     </record>
 
