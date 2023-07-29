@@ -27,6 +27,11 @@
                     attrs="{'invisible': [('is_rental_order', '=', False)]}"
                 />
             </xpath>
+            <field name="validity_date" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'invisible': [('is_rental_order', '!=', False)]}</attribute>
+            </field>
         </field>
     </record>
 
